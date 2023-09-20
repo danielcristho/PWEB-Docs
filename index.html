@@ -2,8 +2,7 @@
 <html>
 <head>
 	<title>
-		Create a Portfolio Gallery
-		using HTML and CSS
+		Course Portal
 	</title>
 	<meta name="viewport"
 		content="width=device-width, initial-scale=1">
@@ -88,16 +87,32 @@
                     width: 100%;
                 }
             }
+            .read-more-content {
+                display: none;
+            }
+            .read-more-toggle {
+                cursor: pointer;
+                color: blue;
+            }
+            .read-more-toggle::after {
+                content: "read more...";
+            }
+            .read-more-toggle.active::after {
+                content: "read less...";
+            }
+            .read-more-toggle.active + .read-more-content {
+                display: block;
+    }
         </style>
 </head>
 <body>
 	<!-- title and tag -->
 	<div class="container">
-		<h1>GeeksforGeeks</h1>
-		<h3>A Computer Science Portal for Geeks</h3>
+		<h1>Course Portal</h1>
+		<h3>Choose what you want to learn!</h3>
 		<hr>
 		<!-- Content of the body-->
-		<h2>Portfolio</h2>
+		<!-- <h2>Portfolio</h2> -->
 		<div class="row">
 			<div class="column">
 				<div class="content">
