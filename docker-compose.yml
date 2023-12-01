@@ -1,0 +1,35 @@
+version: '3.7'
+
+services:
+    php-httpd:
+      build:
+          context: .
+          dockerfile: Dockerfile
+      ports:
+        - 80:80
+      volumes:
+        - ./www:/var/www/html
+
+    mysql:
+        image: mysql
+        volumes:
+            - vol-mysql:/var/lib/mysql
+        environment:
+            MYSQL_ALLOW_EMPTY_PASSWORD: "no"
+            MYSQL_ROOT_PASSWORD: "secret"
+            MYSQL_USER: "crud"
+            MYSQL_PASSWORD: "crudpass"
+            MYSQL_DATABASE: "pweb"
+        tty: true
+        command:
+            - "--log_bin_trust_function_creators=1"
+
+    phpmyadmin:
+        image: phpmyadmin/phpmyadmin
+        links:
+            - mysql:db
+        ports:
+            - 8181:80
+
+volumes:
+    vol-mysql:
