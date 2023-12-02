@@ -1,4 +1,2 @@
---
--- Dumping data for table `calon_siswa`
---
-INSERT INTO `calon_siswa` (`id`, `nama`, `alamat`, `jenis_kelamin`, `agama`, `sekolah_asal`) VALUES (NULL, 'Lia', 'Jl. Mangga No. 3, Mataram', 'perempuan', 'islam', 'SMPN 32 Ampenan');
+INSERT INTO `images` (`id`, `title`, `description`, `filepath`, `uploaded_date`) VALUES
+(1, 'Khaby Meme', '', 'images/khaby-lame.jpg', '2023-01-01 20:09:26');

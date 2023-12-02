@@ -5,6 +5,7 @@ services:
       build:
           context: .
           dockerfile: Dockerfile
+      container_name: app
       ports:
         - 80:80
       volumes:
@@ -12,8 +13,10 @@ services:
 
     mysql:
         image: mysql
+        container_name: db
         volumes:
             - vol-mysql:/var/lib/mysql
+            - ./db:/var/lib/db
         environment:
             MYSQL_ALLOW_EMPTY_PASSWORD: "no"
             MYSQL_ROOT_PASSWORD: "secret"
